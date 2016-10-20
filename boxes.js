@@ -80,6 +80,44 @@ $(function() {
   //
   // addRows(2, 1);
   // addRows(1, 4);
+
+  // Make a variable for all divs with parent div of "row", console.log() true if the DIV has class of .boxType1, false otherwise.
+
+  var theDivs = $('div').not('#container').not('.row');
+
+  // theDivs.each(function() {
+  //   if($(this).attr('class').includes('boxType1')) {
+  //     console.log('true');
+  //   } else {
+  //     console.log('false');
+  //   }
+  // });
+
+  // for(var i = 0; i < theDivs.length; i++) {
+  //   console.log(theDivs[i]);
+  //   if(theDivs.eq(i).attr('class').includes('boxType1')) {
+  //     console.log('true');
+  //   }
+  //   else {
+  //     console.log('false');
+  //   }
+  // }
+
+  $('#secretBox').bind('click', function() {
+    $('#container').append($('#secretBox'));
+    $('#container').children().not('#secretBox').remove();
+    $('#secretBox').animate({
+    width: "100%",
+    height: "100%",
+    margin: "0",
+    verticalAlign: "middle",
+    textAlign: "center",
+    padding: "0",
+    fontSize: "3em",
+    }, 2000);
+    $('#secretBox').text('Animation Done!');
+  });
+
 });
 
 
